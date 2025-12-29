@@ -102,5 +102,6 @@ def load_new_json_data(all=False):
 
 # COMMAND ----------
 
+#Copy all files
 download_dataset(data_source_uri,"abfss://uc-storage-uksouth@azhussstorageaccount1.dfs.core.windows.net/dalhussein" )
 set_current_catalog(data_catalog)
