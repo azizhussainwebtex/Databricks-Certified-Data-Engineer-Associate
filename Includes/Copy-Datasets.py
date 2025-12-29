@@ -26,7 +26,9 @@ def download_dataset(source, target):
 data_source_uri = "s3://dalhussein-courses/datasets/bookstore/v1/"
 dataset_bookstore = 'dbfs:/mnt/demo-datasets/bookstore'
 data_catalog = 'hive_metastore'
-spark.conf.set(f"dataset.bookstore", dataset_bookstore)
+dataset_bookstore = "dbfs:/mnt/demo-datasets/bookstore"
+# spark.conf.set("dataset.bookstore", "dbfs:/mnt/demo-datasets/bookstore")
+# spark.conf.set(f"dataset.bookstore", dataset_bookstore)
 
 # COMMAND ----------
 
@@ -100,5 +102,5 @@ def load_new_json_data(all=False):
 
 # COMMAND ----------
 
-download_dataset(data_source_uri, dataset_bookstore)
+download_dataset(data_source_uri,"abfss://uc-storage-uksouth@azhussstorageaccount1.dfs.core.windows.net/dalhussein" )
 set_current_catalog(data_catalog)
